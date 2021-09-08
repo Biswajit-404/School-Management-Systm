@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from limpidthemes.com/Themeforest/html/Pathshala/Pathshala-HTML/dashboard/admin-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Jul 2021 20:38:34 GMT -->
+<head>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="">
+        <title>Pathshala</title>
+
+        <!-- Styles -->
+        <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
+		 <link href="{{url_for('static', filename='css/chartist.min.css')}}" rel="stylesheet" media="screen">
+		<link href="{{url_for('static', filename='css/owl.carousel.min.css')}}" rel="stylesheet" media="screen">
+		<link href="{{url_for('static', filename='css/owl.theme.default.min.css')}}" rel="stylesheet" media="screen">
+        <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" media="screen">
+
+        <!-- Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+        <link href="{{url_for('static', filename='fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" media="screen">
+	<style>
+		div.datedropper.datetheme {
+      --dd-color1: #27ae60;
+      --dd-color2: white;
+      --dd-color3: #4D4D4D;
+      --dd-color4: white;
+      --dd-radius: 6px;
+      --dd-width: 180px;
+      --dd-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.1);
+    }
+	</style>
+    </head>
+    <body>
+<div class="row dashboard-top-nav">
+			<div class="col-sm-6 logo">
+				<h5><i class="fa fa-book"></i>PATHSHALA</h5>
+			</div>
+
+			<div class="col-sm-6 notification-area">
+				<ul class="top-nav-list">
+
+					<li class="user dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+							<span><img src="{{url_for('static', filename='User_img/'+session['img'])}}" alt="user"> {{ session["userName"] }}<span class="caret"></span></span>
+						</a>
+						<ul class="dropdown-menu notification-list">
+
+							<li>
+								<a href="#"><i class="fa fa-users"></i> USER PROFILE</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-key"></i> CHANGE PASSWORD</a>
+							</li>
+							<li>
+								<div class="all-notifications">
+									<a href="{{url_for('logout')}}">LOGOUT</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+    {%block content %}
+    {% endblock %}
+
+            <script src="{{url_for('static', filename='js/jQuery_v3_2_0.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/jquery-ui.min.js')}}"></script>
+        <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+		<script src="{{url_for('static', filename='plugins/owl.carousel.min.js')}}"></script>
+		<script src="{{url_for('static', filename='plugins/Chart.min.js')}}"></script>
+		<script src="{{url_for('static', filename='plugins/jquery.dataTables.min.js')}}"></script>
+		<script src="{{url_for('static', filename='plugins/dataTables.responsive.min.js')}}"></script>
+        <script src="{{url_for('static', filename='js/js.js')}}"></script>
+	     <script src="{{url_for('static', filename='js/datedropper-jquery.js')}}"></script>
+
+	<script>
+	  let date = new Date();
+	  var dd = String(date.getDate()).padStart(2, '0');
+	  var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+	  var yyyy = date.getFullYear();
+	  let today = mm + '/' + dd + '/' + yyyy;
+	  console.log('today is ', today);
+	  $('#dob').dateDropper({
+		format: 'm/d/Y',
+		large: true,
+		largeDefault: true,
+		largeOnly: true,
+		theme: 'datetheme'
+  	  });
+</script>
+ </body>
+</html>
+

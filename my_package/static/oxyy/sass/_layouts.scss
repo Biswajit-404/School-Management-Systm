@@ -1,0 +1,37 @@
+/* =================================== */
+/*  3. Layouts
+/* =================================== */
+
+#main-wrapper.oxyy-login-register {
+  background:#fff;
+}
+
+.oxyy-login-register {
+.section {
+  position: relative;
+  padding: 4.5rem 0;
+  overflow:hidden;
+}
+
+@include media-breakpoint-down(sm) {
+	.section {
+		padding: 3.5rem 0;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+  .container {
+	max-width: 1170px !important;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+.modal .close{
+	position:absolute;
+	z-index:1;
+	right:8px;
+}
+}
+
+
+}

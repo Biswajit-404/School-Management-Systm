@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+		<div class="parent-wrapper" id="outer-wrapper">
+			<!-- SIDE MENU -->
+			{% include "student/student_sidemenu.html" %}
+
+			<!-- MAIN CONTENT -->
+			<div class="main-content" id="content-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<h5 class="page-title"><i class="fa fa-home"></i>STUDENT DASHBOARD</h5>
+							<div class="section-divider"></div>
+							<div class="dashboard-stats">
+								<div class="col-sm-6 col-md-3">
+									<div class="stat-item">
+										<div class="stats">
+											<div class="col-xs-8 count">
+												<h1>{{assign_count}}</h1>
+												<p>ASSIGNMENTS</p>
+											</div>
+											<div class="col-xs-4 icon">
+												<i class="fa fa-code ex-icon"></i>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="status">
+<!--											<p class="text-ex"><i class="fa fa-pencil-square-o"></i>1 Submission Tomorrow</p>-->
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-3">
+									<div class="stat-item">
+										<div class="stats">
+											<div class="col-xs-8 count">
+												<h1>{{ std_count }}</h1>
+												<p>STUDENTS</p>
+											</div>
+											<div class="col-xs-4 icon">
+												<i class="fa fa-users ex-icon"></i>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="status">
+
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-3">
+									<div class="stat-item">
+										<div class="stats">
+											<div class="col-xs-8 count">
+												<h1>{{teach_count}}</h1>
+												<p>TEACHERS</p>
+											</div>
+											<div class="col-xs-4 icon">
+												<i class="fa fa-user-secret danger-icon"></i>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="status">
+
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+								<div class="clearfix visible-sm"></div>
+
+
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-8">
+								<div class="dash-item first-dash-item">
+									<h6 class="item-title"><i class="fa fa-bullhorn"></i>ALL ANNOUNCEMENTS</h6>
+									<div class="inner-item">
+										<table id="attendenceDetailedTable" class="display responsive nowrap" cellspacing="0" width="100%">
+											<thead>
+												<tr>
+													<th><i class="fa fa-cogs"></i>TYPE</th>
+													<th><i class="fa fa-user-secret"></i>FOR</th>
+													<th><i class="fa fa-user-info"></i>SUBJECT</th>
+													<th><i class="fa fa-info-circle"></i>DESCRIPTION</th>
+													<th><i class="fa fa-user"></i>CREATED BY</th>
+
+												</tr>
+											</thead>
+											<tbody>
+											{% for info in data %}
+												<tr>
+													<td>{{info.announcement_type}}</td>
+													<td>{{info.announcement_for}}</td>
+													<td>{{info.subject}}</td>
+													<td>{{info.description}}</td>
+													<td>{{info.announced_by}}</td>
+
+												</tr>
+											{% endfor %}
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+				</div>
+				<div class="menu-togggle-btn">
+					<a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Scripts -->
+{% endblock %}

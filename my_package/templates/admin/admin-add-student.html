@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="parent-wrapper" id="outer-wrapper">
+			<!-- SIDE MENU -->
+			{% include "admin/admin_sidemenu.html" %}
+			
+		<form action="{{ url_for('admin_add_student') }}" method="post">
+			<!-- MAIN CONTENT -->
+			<div class="main-content" id="content-wrapper">
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<h5 class="page-title"><i class="fa fa-user"></i>ADD STUDENT</h5>
+							<div class="section-divider"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<div class="col-md-12">
+								<div class="dash-item first-dash-item">
+									<h6 class="item-title"><i class="fa fa-user"></i>STUDENT INFO</h6>
+									<div class="inner-item">
+										<div class="dash-form">
+											<div class="col-sm-3">
+												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>NAME</label>
+												<input type="text" placeholder="JOHN" required name="name"/>
+											</div>
+
+											<div class="col-sm-3">
+												<label class="clear-top-margin"><i class="fa fa-venus"></i>GENDER</label>
+												<select required name="gender">
+													<option value="male">Male</option>
+													<option value="female">Female</option>
+												</select>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-calendar"></i>DATE OF BIRTH</label>
+												<input type="text"  placeholder="MM/DD/YYYY" required id="dob" name="dob" />
+											</div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-phone"></i>PHONE #</label>
+												<input type="text" placeholder="1234567890" required name="student_phone" />
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-file-picture-o"></i>UPLOAD PHOTO</label>
+												<input type="file" placeholder="90890" required name="img" />
+											</div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-envelope-o"></i>EMAIL</label>
+												<input type="text" placeholder="john@pathshala.com" required name="student_email" />
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="dash-item">
+									<h6 class="item-title"><i class="fa fa-user-secret"></i>PARENT INFO</h6>
+									<div class="inner-item">
+										<div class="dash-form">
+											<div class="col-sm-3">
+												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>FATHER NAME</label>
+												<input type="text" placeholder="JOHN" required name="father"/>
+											</div>
+											<div class="col-sm-3">
+												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>MOTHER NAME</label>
+												<input type="text" placeholder="LENORE" required name="mother" />
+											</div>
+											<div class="col-sm-3">
+												<label class="clear-top-margin"><i class="fa fa-phone"></i>CONTACT #</label>
+												<input type="text" placeholder="1234567890" required name="parent_phone"/>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-phone"></i>ALTERNATE CONTACT #</label>
+												<input type="text" placeholder="1234567890" required name="alt_contact"/>
+											</div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-envelope-o"></i>EMAIL</label>
+												<input type="text" placeholder="john@pathshala.com" required name="parent_email"/>
+											</div>
+
+											<div class="col-sm-3">
+												<label><i class="fa fa-flag"></i>NATIONALITY</label>
+												<select required name="name">
+													<option value="">-- Select --</option>
+													<option value="other">Other</option>
+													<option value="Indian">Indian</option>
+												</select>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-home"></i>ADDRESS</label>
+												<input type="text" placeholder="H/N 42 Street# 10" required name="address" />
+											</div>
+
+											<div class="col-sm-3">
+												<label><i class="fa fa-code"></i>ZIP</label>
+												<input type="text" placeholder="90890" required name="zipcode" />
+											</div>
+											<div class="clearfix"></div>
+
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="dash-item">
+									<h6 class="item-title"><i class="fa fa-book"></i>ACADEMIC INFO</h6>
+									<div class="inner-item">
+										<div class="dash-form">
+											<div class="col-sm-3">
+												<label class="clear-top-margin"><i class="fa fa-id-card"></i>REGISTRATION #</label>
+												<input type="text" placeholder="PTH2017001" required name="reg_id" />
+											</div>
+											<div class="col-sm-3">
+												<label class="clear-top-margin"><i class="fa fa-book"></i>CLASS</label>
+												<select required name="class">
+													<option value="">-- Select --</option>
+													<option value="MCA">MCA</option>
+													<option value="MSc CS"> MSc.CS</option>
+													<option value="MSc IT"> MSc.IT</option>
+													<option value="MSc ITM"> MSc.ITM</option>
+												</select>
+											</div>
+											<div class="col-sm-3">
+												<label class="clear-top-margin"><i class="fa fa-cogs"></i>SECTION</label>
+												<select required name="section">
+													<option value="">-- Select --</option>
+													<option value="REG">REG</option>
+													<option value="LE">LE</option>
+												</select>
+											</div>
+											<div class="col-sm-3">
+												<label class="clear-top-margin"><i class="fa fa-puzzle-piece"></i>ROLL #</label>
+												<input type="text" placeholder="PTH05A01" required name="roll_no"/>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-graduation-cap"></i>LAST SCHOOL</label>
+												<input type="text" placeholder="ABC SCHOOL" required name="last_college"/>
+											</div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-star"></i>LAST STD</label>
+												<input type="text" placeholder="4 STD" required name="last_std"/>
+											</div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-code"></i>MARKS OBTAINED</label>
+												<input type="text" placeholder="76%" required name="mark"/>
+											</div>
+
+											<div class="clearfix"></div>
+											<div class="dash-item">
+											<div class="col-sm-12">
+												<button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> SAVE</button>
+											</div>
+										</div></div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-togggle-btn">
+					<a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+				</div>
+				</div>
+			</div>
+
+
+</form>
+</div>
+
+{% endblock %}

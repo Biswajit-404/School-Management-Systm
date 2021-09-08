@@ -1,0 +1,59 @@
+/*===========================================================
+
+   Template Name: Oxyy - Login and Register Form Html Templates
+   Author: Harnish Design
+   Template URL: http://demo.harnishdesign.net/html/oxyy
+   Author URL: https://themeforest.net/user/harnishdesign
+   File Description : Main css file of the template
+	
+=================================================
+  Table of Contents
+=================================================
+
+	1. Basic
+	2. Helpers Classes
+	3. Layouts
+	4  Elements
+		4.1 Hero Background
+		4.2 Nav
+		4.3 Tabs
+		4.4 Video Play button
+	5 Social Icons
+	6 Extra
+		6.1 Form
+		6.2 Form Dark
+		6.3 Form Border
+		6.4 Form Border Light
+		6.5 Vertical Multilple input group
+		6.6 Other Bootstrap Specific
+
+=======================================================*/
+
+//-------------------- Fonts --------------------//
+
+$body-font: 'Poppins', sans-serif;
+$title-font: 'Poppins', sans-serif;
+
+//-------------------- Base Colors --------------------//
+
+$primary-color: 			$blue;
+$primary-color-hover: 		darken($primary-color, 7%);
+$secondary-color: 			#0c2f55;
+
+$body-bg:					#f1f3f6;
+$text-color:				#4c4d4d;
+$title-color:     			#252b33;
+
+
+//-------------------- Social Colors --------------------//
+
+$facebook:                 #1874eb;
+$twitter:                  #00ACEE;
+$google:                   #DB4437;
+$linkedin:                 #0E76A8;
+$instagram:                #3F729B;
+$vk:                       #2B587A;
+$yahoo:                    #720E9E;
+$apple:                    #000;
+$windows:                  #0090f4;
+$amazon:                   #f79400;

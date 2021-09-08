@@ -1,0 +1,117 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+    <title>pathsala-register</title>
+    <meta name="description" content="Login and Register Form Html Template">
+    <meta name="author" content="harnishdesign.net">
+
+    <!-- Web Fonts
+    ========================= -->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i' type='text/css'>
+
+    <!-- Stylesheet
+    ========================= -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='oxyy/vendor/bootstrap/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='oxyy/vendor/font-awesome/css/all.min.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='oxyy/css/stylesheet.css')}}" />
+    <!-- Colors Css -->
+    <link id="color-switcher" type="text/css" rel="stylesheet" href="{{url_for('static', filename='oxyy/css/color-green.css')}}" />
+    </head>
+    <body>
+
+    <!-- Preloader -->
+    <div class="preloader preloader-dark">
+    <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+    </div>
+    <!-- Preloader End -->
+
+    <div id="main-wrapper" class="oxyy-login-register min-vh-100 d-flex flex-column bg-dark">
+    <div class="container my-auto">
+    <!--<div class="logo my-4"> <a class="d-flex justify-content-center" href="{{url_for('static', filename='oxyy/index.html')}}" title="Oxyy"><img src="{{url_for('static', filename='oxyy/images/logo-lg-light.png')}}" alt="Oxyy"></a> </div> -->
+    <div class="row">
+      <div class="col-md-9 col-lg-7 col-xl-6 mx-auto">
+        <div class="bg-white p-4 pb-sm-5 px-sm-5">
+          <h3 class="text-center text-6 mt-2 mb-4">Create an Account</h3>
+
+          <!-- Form START -->
+          {% with msg=get_flashed_messages(with_categories=true) %}
+            {%if msg%}
+              {%for cc,mm in msg%}
+                {%if cc=='Success'%}
+                  <div class="alert alert-success alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <center> <strong>{{cc}}</strong> {{mm}}</center>
+                  </div>
+                {%else%}
+                  <div class="alert alert-danger alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <center> <strong>{{cc}}</strong> {{mm}}</center>
+                  </div>
+                {%endif%}
+              {%endfor%}
+            {%endif%}
+          {%endwith%}
+          <form id="registerForm" method="post" action="" enctype="multipart/form-data">
+
+            <div class="form-group icon-group">
+              <input type="text" class="form-control rounded-0" id="fullName" name="userName" required placeholder="Full Name">
+                <span class="icon-inside"><i class="fas fa-user"></i></span> </div>
+            <div class="form-group icon-group">
+              <input type="text" minlength="12" maxlength="12" class="form-control rounded-0" id="rollNumber" name="Reg_id" required placeholder="Registration Number/E-Id">
+                <span class="icon-inside"><i class="far fa-id-badge"></i></span> </div>
+            <div class="form-group icon-group">
+              <input type="email" class="form-control rounded-0" id="emailAddress" name="email" required placeholder="Email Address">
+             <span class="icon-inside"><i class="fas fa-envelope"></i></span> </div>
+            <div class="form-group icon-group">
+              <input type="password" class="form-control rounded-0" id="loginPassword" name="password" required placeholder="Password">
+               <span class="icon-inside"><i class="fas fa-lock"></i></span> </div>
+           <div class="form-group icon-group">
+              <input type="password" class="form-control rounded-0" onchange="validatePassword()" id="confirmPassword"  name="confirm_password" required placeholder="Confirm-Password">
+              <span class="icon-inside"><i class="fas fa-lock"></i></span> </div>
+              <span class='text-danger' id="errorPass"></span>
+            <div class="form-group my-4">
+              <lable for ="file">Upload Photo</lable>
+              <input type="file" name="photo" accept="image/*" id='photo' required >
+              <span class="icon-inside"><i class="far fa-file-image"></i></span> </div>
+          <div class="form-group my-4">
+         </div>
+            <button class="btn btn-primary btn-block rounded-0 shadow-none mt-4 mb-3" type="submit">Sign up</button>
+          </form>
+        </div>
+        <p class="text-center my-4"><a class="btn-link text-light" href="{{url_for('login')}}">Already a member? - Log in now!</a></p>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      // write custom js here
+      function validatePassword() {
+        var password = document.getElementById('loginPassword');
+        var cPass = document.getElementById('confirmPassword');
+        var errorPass = document.getElementById('errorPass');
+        var signupBtn = document.getElementById('signupBtn');
+        if(password.value !== cPass.value) {
+          errorPass.innerText = 'Password & Confirm password Doesn\'t match '
+          signupBtn.setAttribute('disabled', true)
+        } else {
+          errorPass.innerText = ''
+          signupBtn.removeAttribute('disabled')
+        }
+      }
+    </script>
+    <script src="{{url_for('static', filename='oxyy/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='oxyy/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='oxyy/js/theme.js')}}"></script>
+    </body>
+    </html>

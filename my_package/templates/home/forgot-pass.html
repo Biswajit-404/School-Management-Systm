@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+<title>pathsala-forgot-pass</title>
+<meta name="description" content="Login and Register Form Html Template">
+<meta name="author" content="harnishdesign.net">
+
+<!-- Web Fonts
+========================= -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i' type='text/css'>
+
+<!-- Stylesheet
+========================= -->
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='oxyy/vendor/bootstrap/css/bootstrap.min.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='oxyy/vendor/font-awesome/css/all.min.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='oxyy/css/stylesheet.css')}}" />
+<!-- Colors Css -->
+<link id="color-switcher" type="text/css" rel="stylesheet" href="{{url_for('static', filename='oxyy/css/color-green.css')}}" />
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader preloader-dark">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<!-- Preloader End -->
+
+<div id="main-wrapper" class="oxyy-login-register min-vh-100 d-flex flex-column bg-dark">
+  <div class="container my-auto">
+    
+    <div class="row">
+      <div class="col-md-9 col-lg-7 col-xl-6 mx-auto">
+        <div class="bg-white p-4 pb-sm-5 px-sm-5">
+          <h3 class="text-center text-6 mt-2 mb-4">Forgot password?</h3>
+          <p class="text-muted text-center mb-4">Enter the email address </p>
+          <form id="forgotForm" method="post">
+            <div class="form-group icon-group">
+              <input type="text" class="form-control rounded-0" id="emailAddress" required placeholder="Enter Email or Mobile Number">
+              <span class="icon-inside"><i class="fas fa-envelope"></i></span> </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-block rounded-0 shadow-none mt-4 mb-3" type="submit">Continue</button>
+            </div>
+          </form>
+          <p class="text-1 text-muted text-center text-uppercase">or login with</p>
+          <div class="d-flex  flex-column align-items-center mb-2">
+            <ul class="social-icons">
+
+            </ul>
+          </div>
+        </div>
+        <p class="text-center my-4"><a class="btn-link text-light" href="{{url_for('login')}}">Return to Log in now!</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script --> 
+<script src="{{url_for('static', filename='oxyy/vendor/jquery/jquery.min.js')}}"></script> 
+<script src="{{url_for('static', filename='oxyy/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script> 
+<script src="{{url_for('static', filename='oxyy/js/theme.js')}}"></script>
+</body>
+</html>
